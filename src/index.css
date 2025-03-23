@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 60 100% 50%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 60 100% 50%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 60 100% 50%;
+
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 7%;
+
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 60 100% 50%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 60 70% 50%;
+
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 100% 97%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 60 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border selection:bg-portfolio-yellow selection:text-portfolio-black-dark;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-portfolio-black-dark text-white antialiased font-space-grotesk;
+  }
+}
+
+@layer components {
+  .highlight {
+    @apply text-portfolio-yellow inline-block;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold font-syne mb-6 tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl opacity-80 max-w-md mx-auto mb-10;
+  }
+  
+  .button-primary {
+    @apply px-6 py-3 bg-portfolio-yellow text-portfolio-black-dark rounded-md font-semibold 
+    transition-all duration-300 hover:bg-portfolio-yellow-light hover:shadow-[0_0_20px_rgba(255,222,3,0.5)] 
+    focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:ring-offset-2 focus:ring-offset-portfolio-black-dark;
+  }
+  
+  .button-secondary {
+    @apply px-6 py-3 bg-transparent text-portfolio-yellow rounded-md font-semibold border border-portfolio-yellow
+    transition-all duration-300 hover:bg-portfolio-yellow/10 hover:shadow-[0_0_20px_rgba(255,222,3,0.3)]
+    focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:ring-offset-2 focus:ring-offset-portfolio-black-dark;
+  }
+  
+  .card {
+    @apply bg-portfolio-black-light rounded-lg p-6 shadow-lg border border-portfolio-black-light 
+    transition-all duration-300 hover:border-portfolio-yellow/30;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-portfolio-black-light border border-portfolio-black-light rounded-md
+    focus:outline-none focus:ring-2 focus:ring-portfolio-yellow focus:border-transparent
+    text-white transition-all duration-300;
+  }
+  
+  .glassmorphism {
+    @apply bg-portfolio-black-dark/60 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom Fonts */
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFDE03;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFB300;
+}
+
+/* Smooth scroll effect */
+html {
+  scroll-behavior: smooth;
+}
