@@ -107,7 +107,7 @@ const About: React.FC = () => {
             </h3>
 
             <p className="mb-6 text-lg opacity-80">
-              Olá, meu nome é Matheus, tenho 24 anos. Comecei minha jornada na programação no início de 2022 e, desde então, me apaixonei pela área e por sua capacidade de transformar ideias em soluções.
+              Olá, meu nome é Matheus da Rocha Vieira, tenho 24 anos. Comecei minha jornada na programação no início de 2022 e, desde então, me apaixonei pela área e por sua capacidade de transformar ideias em soluções.
             </p>
 
             <p className="mb-8 text-lg opacity-80">

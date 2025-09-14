@@ -17,18 +17,27 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // In a real application, you would send this data to a server
+    try {
+      const body = new URLSearchParams({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
 
-    // Simulating a successful submission
-    alert('Mensagem enviada com sucesso!');
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+      await fetch("https://script.google.com/macros/s/AKfycbxygUI8tWRVFfPcw31DWbZiYCZcpRGHT55r-4fJQruzrppTRH_fOGpVOrsI5ecBq5v4gw/exec", {
+        method: "POST",
+        body: body
+      });
+
+      alert("Mensagem enviada com sucesso!");
+      setFormData({ name: "", email: "", message: "" });
+
+    } catch (error) {
+      console.error('Erro ao enviar a mensagem:', error);
+      alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.');
+    }
   };
 
   return (
