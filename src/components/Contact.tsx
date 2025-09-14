@@ -1,6 +1,7 @@
+import { Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
 
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
-import React, { useState } from 'react';
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,15 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const isValid = useMemo(() => {
+    const nameOk = formData.name.trim().length > 0;
+    const emailOk = emailRegex.test(formData.email.trim());
+    const msgOk = formData.message.trim().length >= 10; // mínimo útil
+    return nameOk && emailOk && msgOk;
+  }, [formData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,6 +29,14 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
+    if (!isValid) {
+      alert('Por favor, preencha todos os campos corretamente (mensagem com pelo menos 10 caracteres).');
+      return;
+    }
+
+    setIsSubmitting(true);
     try {
       const body = new URLSearchParams({
         name: formData.name,
@@ -37,6 +55,8 @@ const Contact: React.FC = () => {
     } catch (error) {
       console.error('Erro ao enviar a mensagem:', error);
       alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -148,14 +168,21 @@ const Contact: React.FC = () => {
                   className="input-field resize-none"
                   placeholder="Detalhes do seu projeto ou mensagem..."
                   required
-                ></textarea>
+                  minLength={10}
+                />
+                <p className="text-xs mt-1 opacity-60">
+                  Mínimo de 10 caracteres.
+                </p>
               </div>
-
               <button
                 type="submit"
-                className="w-full button-primary flex items-center justify-center gap-2"
+                className="w-full button-primary flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={!isValid || isSubmitting}
+                aria-disabled={!isValid || isSubmitting}
+                aria-busy={isSubmitting}
               >
-                <Send size={16} /> Enviar mensagem
+                {isSubmitting ? <Loader2 className="animate-spin" size={16} /> : <Send size={16} />}
+                {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
               </button>
             </form>
           </div>
