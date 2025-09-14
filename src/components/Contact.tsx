@@ -89,30 +89,30 @@ const Contact: React.FC = () => {
 
             <div className="space-y-6 mb-8">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full bg-portfolio-black-dark flex items-center justify-center text-portfolio-yellow">
+                <div className="w-12 h-12 rounded-full bg-portfolio-black-dark flex items-center justify-center text-portfolio-yellow flex-shrink-0">
                   <Mail size={20} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h4 className="text-lg font-semibold mb-1">Email</h4>
-                  <p className="opacity-70">matheusrochavieira.contato@gmail.com</p>
+                  <p className="opacity-70 break-words">matheusrochavieira.contato@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full bg-portfolio-black-dark flex items-center justify-center text-portfolio-yellow">
+                <div className="w-12 h-12 rounded-full bg-portfolio-black-dark flex items-center justify-center text-portfolio-yellow flex-shrink-0">
                   <Phone size={20} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h4 className="text-lg font-semibold mb-1">Telefone</h4>
                   <p className="opacity-70">+55 (51) 9 9851-6699</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full bg-portfolio-black-dark flex items-center justify-center text-portfolio-yellow">
+                <div className="w-12 h-12 rounded-full bg-portfolio-black-dark flex items-center justify-center text-portfolio-yellow flex-shrink-0">
                   <MapPin size={20} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h4 className="text-lg font-semibold mb-1">Localização</h4>
                   <p className="opacity-70">Rio Grande do Sul, Brasil</p>
                 </div>

@@ -34,17 +34,17 @@ const About: React.FC = () => {
     {
       icon: <Server size={32} />,
       title: 'Backend',
-      description: 'APIs robustas com Node.js e NestJS seguindo boas práticas.'
+      description: 'APIs robustas com NodeJS e NestJS seguindo boas práticas.'
     },
     {
       icon: <Database size={32} />,
       title: 'Banco de Dados',
-      description: 'Modelagem e otimização com PostgreSQL para aplicações escaláveis.'
+      description: 'Modelagem e otimização com SQL para aplicações escaláveis.'
     },
     {
       icon: <Code size={32} />,
       title: 'Frontend',
-      description: 'Desenvolvimento de interfaces com React, Next.js e TypeScript.'
+      description: 'Desenvolvimento de interfaces com React, NextJS e TypeScript.'
     },
     {
       icon: <Terminal size={32} />,
@@ -107,15 +107,15 @@ const About: React.FC = () => {
             </h3>
 
             <p className="mb-6 text-lg opacity-80">
-              Olá, meu nome é Matheus da Rocha Vieira, tenho 24 anos. Comecei minha jornada na programação no início de 2022 e, desde então, me apaixonei pela área e por sua capacidade de transformar ideias em soluções.
+              Oi, eu sou o Matheus, tenho 24 anos e comecei a programar no início de 2022. Desde então, descobri na tecnologia uma forma de transformar ideias em algo útil de verdade. Isso virou uma paixão que só cresce a cada projeto.
             </p>
 
             <p className="mb-8 text-lg opacity-80">
-              Meu foco principal é no desenvolvimento backend, onde busco criar sistemas robustos, escaláveis e eficientes. No entanto, sempre que necessário, também coloco a mão na massa no frontend para garantir uma experiência completa e integrada para os usuários.
+              Hoje meu foco é o desenvolvimento backend, criando sistemas que sejam estáveis, escaláveis e que realmente funcionem bem no dia a dia. Mas, quando o projeto pede, também encaro o frontend para entregar uma experiência completa para o usuário.
             </p>
 
             <div className="flex flex-wrap gap-3">
-              {['TypeScript', 'React', 'Next.js', 'Node.js', 'NestJS', 'PostgreSQL', 'Docker', 'Jest'].map((skill) => (
+              {['TypeScript', 'React', 'NextJS', 'NodeJS', 'NestJS', 'SQL', 'Docker', 'Jest'].map((skill) => (
                 <span
                   key={skill}
                   className="px-4 py-2 bg-portfolio-black-dark rounded-full border border-portfolio-yellow/30 text-sm"
