@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 pb-10"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#222222_0%,#000000_100%)] z-0"></div>
 
@@ -77,12 +77,14 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll down indicator */}
-      <a
-        href="#about"
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white hover:text-portfolio-yellow transition-colors duration-300 animate-float"
-      >
-        <ChevronDown size={32} />
-      </a>
+      <div className="flex justify-center mt-16">
+        <a
+          href="#about"
+          className="text-white hover:text-portfolio-yellow transition-colors duration-300 animate-float"
+        >
+          <ChevronDown size={32} />
+        </a>
+      </div>
     </section>
   );
 };
